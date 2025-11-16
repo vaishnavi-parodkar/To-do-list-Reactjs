@@ -1,0 +1,122 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+.to-do-list {
+    text-align: center;
+    width: 420px;
+    background: hsl(0, 0%, 15%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+input[type="text"] {
+    font-size: 1rem;
+    padding: 8px;
+    border: 2px solid hsl(0, 0%, 70%);
+    border-radius: 5px;
+    width: 70%;
+    outline: none;
+}
+
+.add-button {
+    background-color: hsl(125, 47%, 54%);
+    padding: 8px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.add-button:hover {
+    background-color: hsl(125, 47%, 44%);
+}
+
+ol {
+    counter-reset: task-counter;
+    list-style: none;
+    padding: 10px;
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+li {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px;
+    background-color: hsl(0, 0%, 46%);
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+}
+
+li::before {
+    counter-increment: task-counter;
+    content: counter(task-counter) ". ";
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text {
+    flex: 1;
+    padding: 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.button-group {
+    padding: 12px;
+    margin: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.delete-button {
+    background-color: rgb(184, 16, 16);
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 6px 10px;
+}
+
+.delete-button:hover {
+    background-color: hsl(10, 80%, 40%);
+}
+
+.move-button {
+    background-color: hsl(207, 86%, 39%);
+    font-size: 0.9rem;
+    padding: 6px 10px;
+}
+
+.move-button:hover {
+    background-color: hsl(207, 96%, 43%);
+}
